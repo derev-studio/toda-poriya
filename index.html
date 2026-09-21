@@ -119,7 +119,7 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 .pbar{height:10px;border-radius:6px;background:var(--card);overflow:hidden;margin:14px 0 6px}
 .pfill{height:100%;width:0%;background:linear-gradient(90deg,#8a6516,#f3cd66);transition:width .45s ease}
 .ptext{font-size:13px;color:var(--cap,#cbb57e);text-align:center;margin-bottom:4px}
-.crpl{background:none;border:none;color:var(--cap,#b98f2f);cursor:pointer;font-size:13px;padding:2px 0;margin-top:4px;text-decoration:underline;font-family:inherit}.rbox{display:none;gap:8px;margin-top:8px;align-items:center}.rbox.open{display:flex}.rbox .rin{flex:1;min-width:0;background:rgba(0,0,0,.25);border:1px solid rgba(190,150,60,.4);border-radius:10px;padding:8px 10px;color:inherit;font-size:14px;font-family:inherit}.rsend{padding:8px 14px;font-size:13px;flex-shrink:0}.replies{margin-top:10px;border-inline-start:2px solid rgba(190,150,60,.4);padding-inline-start:12px}.rpl-item{position:relative;margin-bottom:8px}</style>
+.crpl{background:none;border:none;color:var(--cap,#b98f2f);cursor:pointer;font-size:13px;padding:2px 0;margin-top:4px;text-decoration:underline;font-family:inherit}.rbox{display:none;gap:8px;margin-top:8px;align-items:center}.rbox.open{display:flex}.rbox .rin{flex:1;min-width:0;background:rgba(0,0,0,.25);border:1px solid rgba(190,150,60,.4);border-radius:10px;padding:8px 10px;color:inherit;font-size:14px;font-family:inherit}.rsend{padding:8px 14px;font-size:13px;flex-shrink:0}.replies{margin-top:10px;border-inline-start:2px solid rgba(190,150,60,.4);padding-inline-start:12px}.rpl-item{position:relative;margin-bottom:8px}.cacts{display:flex;gap:18px;margin-top:10px}.cdel-t{color:#c96f5a !important}</style>
 </head>
 <body>
 <div class="wrap">
@@ -389,11 +389,13 @@ if(fauth){fauth.getRedirectResult().catch(function(){});fauth.onAuthStateChanged
 var lastSnap=null;
 function oneC(k,c,el){var loc=el.dataset.loc||'ru-RU';var d='';try{d=new Date(c.ts).toLocaleDateString(loc,{day:'numeric',month:'long',year:'numeric'})}catch(e){}
 var can=fuser&&(fuser.uid===c.uid||fuser.uid===ADMIN_UID);
-var h='<div class="cmt">'+(can?'<button class="cdel" title="'+el.dataset.del+'" onclick="delC(\''+k+'\',this)">✕</button>':'')+'<div class="chead">'+avaHtml(c.av,c.n)+'<b>'+esc(c.n||'—')+'</b><span>'+esc(d)+'</span></div>'+(c.t?'<div class="ctext">'+esc(c.t)+'</div>':'')+(c.i?'<img class="cimg" src="'+esc(c.i)+'" alt=""/>':'')+'<button class="crpl" onclick="replyBox(\''+k+'\')">'+esc(el.dataset.rpl)+'</button><div class="rbox" id="rb-'+k+'"><input class="rin" maxlength="400" placeholder="'+esc(el.dataset.rph)+'"/><button class="btn rsend" onclick="sendReply(\''+k+'\',this)">'+esc(el.dataset.rsend)+'</button></div>';
+var h='<div class="cmt"><div class="chead">'+avaHtml(c.av,c.n)+'<b>'+esc(c.n||'—')+'</b><span>'+esc(d)+'</span></div>'+(c.t?'<div class="ctext">'+esc(c.t)+'</div>':'')+(c.i?'<img class="cimg" src="'+esc(c.i)+'" alt=""/>':'');
+h+='<div class="cacts"><button class="crpl" onclick="replyBox(\''+k+'\',this)">'+esc(el.dataset.rpl)+'</button>'+(can?'<button class="crpl cdel-t" onclick="delC(\''+k+'\',this)">'+esc(el.dataset.del)+'</button>':'')+'</div>';
+h+='<div class="rbox"><input class="rin" maxlength="400" placeholder="'+esc(el.dataset.rph)+'"/><button class="btn rsend" onclick="sendReply(\''+k+'\',this)">'+esc(el.dataset.rsend)+'</button></div>';
 var rs=c.replies?Object.keys(c.replies):[];
 if(rs.length){h+='<div class="replies">'+rs.map(function(rk){var r=c.replies[rk];var rd='';try{rd=new Date(r.ts).toLocaleDateString(loc,{day:'numeric',month:'long'})}catch(e){}
 var rc=fuser&&(fuser.uid===r.uid||fuser.uid===ADMIN_UID);
-return '<div class="rpl-item">'+(rc?'<button class="cdel rdel" title="'+el.dataset.del+'" onclick="delReply(\''+k+'\',\''+rk+'\',this)">✕</button>':'')+'<div class="chead">'+avaHtml(r.av,r.n)+'<b>'+esc(r.n||'—')+'</b><span>'+esc(rd)+'</span></div><div class="ctext">'+esc(r.t)+'</div></div>'}).join('')+'</div>'}
+return '<div class="rpl-item"><div class="chead">'+avaHtml(r.av,r.n)+'<b>'+esc(r.n||'—')+'</b><span>'+esc(rd)+'</span></div><div class="ctext">'+esc(r.t)+'</div>'+(rc?'<button class="crpl cdel-t" onclick="delReply(\''+k+'\',\''+rk+'\',this)">'+esc(el.dataset.del)+'</button>':'')+'</div>'}).join('')+'</div>'}
 return h+'</div>'}
 function drawC(){if(!fdb){document.querySelectorAll('.clist').forEach(function(el){el.innerHTML='<div class="cempty">'+el.dataset.empty+'</div>'});return}
 document.querySelectorAll('.clist').forEach(function(el){var v=lastSnap||{};var keys=Object.keys(v);
@@ -401,10 +403,10 @@ if(!keys.length){el.innerHTML='<div class="cempty">'+el.dataset.empty+'</div>';r
 el.innerHTML=keys.map(function(k){return oneC(k,v[k],el)}).reverse().join('')})}
 function renderC(){if(!fdb){drawC();return}
 fdb.ref('hospital-comments').limitToLast(100).on('value',function(s){lastSnap=s.val()||{};drawC()})}
-function replyBox(k){if(!fuser){signInG();return}var b=document.getElementById('rb-'+k);if(!b)return;var open=b.classList.contains('open');document.querySelectorAll('.rbox.open').forEach(function(x){x.classList.remove('open')});if(!open){b.classList.add('open');var i=b.querySelector('.rin');if(i)i.focus()}}
-function sendReply(k,btn){if(!fdb||!fuser)return;var b=document.getElementById('rb-'+k);var t=b.querySelector('.rin').value.trim();if(!t){b.querySelector('.rin').focus();return}
+function replyBox(k,btn){if(!fuser){signInG();return}var cm=btn.closest('.cmt');var b=cm?cm.querySelector('.rbox'):null;if(!b)return;var open=b.classList.contains('open');document.querySelectorAll('.rbox.open').forEach(function(x){x.classList.remove('open')});if(!open){b.classList.add('open');var i=b.querySelector('.rin');if(i)i.focus()}}
+function sendReply(k,btn){if(!fdb||!fuser)return;var cm=btn.closest('.cmt');var b=cm?cm.querySelector('.rbox'):null;if(!b)return;var t=b.querySelector('.rin').value.trim();if(!t){b.querySelector('.rin').focus();return}
 btn.disabled=true;fdb.ref('hospital-comments/'+k+'/replies').push({n:fuser.displayName||fuser.email||'—',uid:fuser.uid,av:fuser.photoURL||'',t:t.slice(0,400),ts:firebase.database.ServerValue.TIMESTAMP}).then(function(){btn.disabled=false}).catch(function(e){btn.disabled=false;alert(e.message)})}
-function delReply(k,rk,btn){if(!fdb||!fuser)return;if(!confirm(kCf(btn)))return;fdb.ref('hospital-comments/'+k+'/replies/'+rk).once('value').then(function(s){var c=s.val();if(c&&c.uid===fuser.uid){return fdb.ref('hospital-comments/'+k+'/replies/'+rk).remove()}}).catch(function(){})}
+function delReply(k,rk,btn){if(!fdb||!fuser)return;if(!confirm(kCf(btn)))return;fdb.ref('hospital-comments/'+k+'/replies/'+rk).once('value').then(function(s){var c=s.val();if(c&&(c.uid===fuser.uid||fuser.uid===ADMIN_UID)){return fdb.ref('hospital-comments/'+k+'/replies/'+rk).remove()}}).catch(function(){})}
 function addC(btn){var box=btn.closest('.cbox');var list=box.querySelector('.clist');var t=box.querySelector('.ctext-in').value.trim();
 if(!fauth){return}
 if(!fuser){signInG();return}
@@ -427,7 +429,7 @@ if(d&&d.success&&d.data&&d.data.url){done(d.data.url)}else{done(c.toDataURL('ima
 img.onerror=function(){done('')};img.src=r.result};
 r.readAsDataURL(f)}else{done('')}}
 function kCf(btn){var el=btn&&btn.closest?btn.closest('.clist'):null;return el&&el.dataset.cf?el.dataset.cf:'Delete this comment?'}
-function delC(k,btn){if(!fdb||!fuser)return;if(!confirm(kCf(btn)))return;fdb.ref('hospital-comments/'+k).once('value').then(function(s){var c=s.val();if(c&&c.uid===fuser.uid){return fdb.ref('hospital-comments/'+k).remove()}}).catch(function(){})}
+function delC(k,btn){if(!fdb||!fuser)return;if(!confirm(kCf(btn)))return;fdb.ref('hospital-comments/'+k).once('value').then(function(s){var c=s.val();if(c&&(c.uid===fuser.uid||fuser.uid===ADMIN_UID)){return fdb.ref('hospital-comments/'+k).remove()}}).catch(function(){})}
 renderC();renderAuthG();showQuote();
 function shareP(){const d={title:'Благодарственное письмо · מכתב תודה',text:'Благодарность врачам Медицинского центра «Цафон»:',url:location.href};if(navigator.share){navigator.share(d).catch(()=>{})}else{try{navigator.clipboard.writeText(location.href);alert('הקישור הועתק · Ссылка скопирована')}catch(e){prompt('Скопируй ссылку:',location.href)}}}
 (function(){var els=document.querySelectorAll('.sec');if(!('IntersectionObserver' in window)){return}els.forEach(function(e){e.classList.add('rv')});var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.08});els.forEach(function(e){io.observe(e)});setTimeout(function(){var cur=document.querySelector('.lang.cur');if(cur){cur.querySelectorAll('.sec.rv').forEach(function(e){e.classList.add('on')})}},1100)})();
