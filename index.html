@@ -98,6 +98,14 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 .cdel{position:absolute;top:8px;inset-inline-end:8px;background:none;border:none;color:var(--muted,#9a8c6d);cursor:pointer;font-size:14px;padding:4px}
 .cempty{text-align:center;color:var(--muted,#9a8c6d);font-size:14px;padding:14px}
 .cnote{text-align:center;font-size:12px;color:var(--muted,#9a8c6d);margin-top:10px}
+.cauth{margin-bottom:10px;text-align:center}
+.cgoogle{background:linear-gradient(180deg,#ffffff,#f1f1f1 50%,#dcdcdc);color:#3c3c3c;font-weight:700;border:1.5px solid #b5b5b5;box-shadow:0 3px 10px var(--shadow,rgba(0,0,0,.4)),inset 0 1px 0 rgba(255,255,255,.9)}
+.cguest{font-size:12.5px;color:var(--muted);margin-top:6px}
+.cwho{display:inline-flex;align-items:center;gap:7px;font-size:14px;color:var(--soft)}
+.clink{background:none;border:none;color:var(--cap);font-size:13px;cursor:pointer;text-decoration:underline;margin-inline-start:8px}
+.cava{width:26px;height:26px;border-radius:50%;object-fit:cover;border:1.5px solid #b08d3e;vertical-align:middle}
+.cava-t{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#f3cd66,#96701a);color:#3a2c08;font-weight:700;font-size:13px}
+
 
 .thx{list-style:none;margin:0 0 14px;padding:0}
 .thx li{position:relative;padding-inline-start:26px;margin-bottom:12px}
@@ -179,15 +187,11 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 </div>
 </div>
 
-<div class="cbox sec">
-<h2 class="ge" style="font-size:22px">תגובות</h2>
-<input class="cname" type="text" maxlength="40" placeholder="שם (אופציונלי)"/>
+<div class="cauth" data-login="התחברות עם Google" data-logout="התנתקות" data-guest="התחברו עם Google כדי לכתוב תגובה"></div>
 <textarea class="ctext-in" maxlength="600" placeholder="כתבו מילים טובות לרופאים…"></textarea>
-<label class="cfile-lbl">+ הוספת תמונה<input class="cfile" type="file" accept="image/*"/></label>
 <button class="btn cadd" onclick="addC(this)">שליחה</button>
-<div class="clist" data-empty="עדיין אין תגובות — היו ראשונים!" data-need="נא לכתוב טקסט או להוסיף תמונה" data-big="התמונה גדולה מדי (עד 4 מגה-בית)" data-full="האחסון מלא — מחקו תגובות ישנות" data-del="מחיקה" data-loc="he-IL"></div>
-<div class="cnote">התגובות נשמרות בדפדפן שלך בלבד, על המכשיר הזה</div>
-</div>
+<div class="clist" data-empty="עדיין אין תגובות — היו ראשונים!" data-need="נא לכתוב טקסט או להוסיף תמונה" data-del="מחיקה" data-loc="he-IL" data-busy="שולח…"></div>
+<div class="cnote">התגובות גלויות לכל הגולשים. כדי לכתוב — התחברו עם Google.</div>
 
 <div class="foot"><span class="fdisc">אתר לא רשמי · פרויקט אישי ודף תודה מטעם מטופל</span><br/><br/>«צפון» · פוריה · ישראל · © Derev Studio 🌵</div>
 </div>
@@ -234,15 +238,11 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 </div>
 </div>
 
-<div class="cbox sec">
-<h2 class="ge" style="font-size:22px">التعليقات</h2>
-<input class="cname" type="text" maxlength="40" placeholder="الاسم (اختياري)"/>
+<div class="cauth" data-login="تسجيل الدخول عبر Google" data-logout="تسجيل الخروج" data-guest="سجّلوا الدخول عبر Google لكتابة تعليق"></div>
 <textarea class="ctext-in" maxlength="600" placeholder="اكتبوا كلمات طيبة للأطباء…"></textarea>
-<label class="cfile-lbl">+ إضافة صورة<input class="cfile" type="file" accept="image/*"/></label>
 <button class="btn cadd" onclick="addC(this)">إرسال</button>
-<div class="clist" data-empty="لا توجد تعليقات بعد — كن الأول!" data-need="اكتب نصاً أو أضف صورة" data-big="الصورة كبيرة جداً (حتى 4 م.ب)" data-full="الذاكرة ممتلئة — احذف تعليقات قديمة" data-del="حذف" data-loc="ar-IL"></div>
-<div class="cnote">التعليقات تُحفظ في متصفحك فقط على هذا الجهاز</div>
-</div>
+<div class="clist" data-empty="لا توجد تعليقات بعد — كن الأول!" data-need="اكتب نصاً أو أضف صورة" data-del="حذف" data-loc="ar-IL" data-busy="جارٍ الإرسال…"></div>
+<div class="cnote">التعليقات ظاهرة للجميع. للكتابة — سجّلوا الدخول عبر Google.</div>
 
 <div class="foot"><span class="fdisc">موقع غير رسمي · مشروع شخصي وصفحة شكر من مريض</span><br/><br/>«تسافون» · بوريا · إسرائيل · © Derev Studio 🌵</div>
 </div>
@@ -289,15 +289,11 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 </div>
 </div>
 
-<div class="cbox sec">
-<h2 class="ge" style="font-size:22px">Comments</h2>
-<input class="cname" type="text" maxlength="40" placeholder="Your name (optional)"/>
+<div class="cauth" data-login="Sign in with Google" data-logout="Sign out" data-guest="Sign in with Google to write a comment"></div>
 <textarea class="ctext-in" maxlength="600" placeholder="Write kind words to the doctors…"></textarea>
-<label class="cfile-lbl">+ Add a photo<input class="cfile" type="file" accept="image/*"/></label>
 <button class="btn cadd" onclick="addC(this)">Send</button>
-<div class="clist" data-empty="No comments yet — be the first!" data-need="Please write some text or add a photo" data-big="Photo too large (max 4 MB)" data-full="Storage is full — delete old comments" data-del="Delete" data-loc="en-GB"></div>
-<div class="cnote">Comments are stored in your browser on this device only</div>
-</div>
+<div class="clist" data-empty="No comments yet — be the first!" data-need="Please write some text or add a photo" data-del="Delete" data-loc="en-GB" data-busy="Sending…"></div>
+<div class="cnote">Comments are visible to everyone. Sign in with Google to write one.</div>
 
 <div class="foot"><span class="fdisc">This is an unofficial site · A personal project and a thank-you page from a patient</span><br/><br/>“Tzafon” · Poriya · Israel · © Derev Studio 🌵</div>
 </div>
@@ -344,19 +340,18 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 </div>
 </div>
 
-<div class="cbox sec">
-<h2 class="ge" style="font-size:22px">Комментарии</h2>
-<input class="cname" type="text" maxlength="40" placeholder="Ваше имя (необязательно)"/>
+<div class="cauth" data-login="Войти через Google" data-logout="Выйти" data-guest="Войдите через Google, чтобы написать комментарий"></div>
 <textarea class="ctext-in" maxlength="600" placeholder="Напишите добрые слова врачам…"></textarea>
-<label class="cfile-lbl">+ Добавить фото<input class="cfile" type="file" accept="image/*"/></label>
 <button class="btn cadd" onclick="addC(this)">Отправить</button>
-<div class="clist" data-empty="Пока нет комментариев — будьте первым!" data-need="Напишите текст или добавьте фото" data-big="Фото слишком большое (максимум 4 МБ)" data-full="Хранилище заполнено — удалите старые комментарии" data-del="Удалить" data-loc="ru-RU"></div>
-<div class="cnote">Комментарии хранятся в вашем браузере на этом устройстве</div>
-</div>
+<div class="clist" data-empty="Пока нет комментариев — будьте первым!" data-need="Напишите текст или добавьте фото" data-del="Удалить" data-loc="ru-RU" data-busy="Отправка…"></div>
+<div class="cnote">Комментарии видны всем посетителям. Чтобы написать — войдите через Google.</div>
 
 <div class="foot"><span class="fdisc">Это неофициальный сайт · Личный проект и страница благодарности от пациента</span><br/><br/>«Цафон» · Пория · Израиль · © Derev Studio 🌵</div>
 </div>
 </div>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <script>
 var QUOTES={
 ru:["«Благодарность — это память сердца.»","«Нет долга святее, чем благодарность.» — Цицерон","«Кто умеет благодарить, тот умеет и давать.»","«Благодарность — дар благородных душ.»"],
@@ -373,12 +368,29 @@ function openM(){var m=document.querySelector('.lang.cur .modal');if(m){m.classL
 function closeM(){var m=document.querySelector('.lang.cur .modal');if(m){m.classList.remove('open');document.body.style.overflow=''}}
 function goC(){openM()}
 function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
-function loadC(){try{return JSON.parse(localStorage.getItem('comments')||'[]')}catch(e){return[]}}
-function saveC(a){try{localStorage.setItem('comments',JSON.stringify(a));return true}catch(e){return false}}
-function renderC(){var a=loadC();document.querySelectorAll('.clist').forEach(function(el){var html;if(!a.length){html='<div class="cempty">'+el.dataset.empty+'</div>'}else{html=a.slice().reverse().map(function(c){return '<div class="cmt"><button class="cdel" title="'+el.dataset.del+'" onclick="delC('+c.id+')">✕</button><div class="chead"><b>'+esc(c.n||'—')+'</b><span>'+esc(c.d)+'</span></div>'+(c.t?'<div class="ctext">'+esc(c.t)+'</div>':'')+(c.i?'<img class="cimg" src="'+c.i+'" alt=""/>':'')+'</div>'}).join('')}el.innerHTML=html})}
-function addC(btn){var box=btn.closest('.cbox');var list=box.querySelector('.clist');var t=box.querySelector('.ctext-in').value.trim();var n=box.querySelector('.cname').value.trim();var f=box.querySelector('.cfile').files[0];if(!t&&!f){alert(list.dataset.need);return}function done(img){var a=loadC();var loc=list.dataset.loc||'ru-RU';var d;try{d=new Date().toLocaleDateString(loc,{day:'numeric',month:'long',year:'numeric'})}catch(e){d=new Date().toLocaleDateString()}a.push({id:Date.now(),n:n,t:t,d:d,i:img||''});if(!saveC(a)){alert(list.dataset.full);return}box.querySelector('.ctext-in').value='';box.querySelector('.cname').value='';box.querySelector('.cfile').value='';renderC()}if(f){if(f.size>4*1024*1024){alert(list.dataset.big);return}var r=new FileReader();r.onload=function(){var img=new Image();img.onload=function(){var c=document.createElement('canvas');var sc=Math.min(1,800/img.width);c.width=Math.round(img.width*sc);c.height=Math.round(img.height*sc);c.getContext('2d').drawImage(img,0,0,c.width,c.height);done(c.toDataURL('image/jpeg',0.72))};img.onerror=function(){done('')};img.src=r.result};r.readAsDataURL(f)}else{done('')}}
-function delC(id){saveC(loadC().filter(function(c){return c.id!==id}));renderC()}
-renderC();showQuote();
+var FB_CFG={apiKey:"AIzaSyB2X3o7KwYFkMfsskKoWpQYBrws8L-Mn9w",authDomain:"photo-gallery-18193.firebaseapp.com",projectId:"photo-gallery-18193",databaseURL:"https://photo-gallery-18193-default-rtdb.firebaseio.com",storageBucket:"photo-gallery-18193.firebasestorage.app",messagingSenderId:"329094770221",appId:"1:329094770221:web:b9d076f195f968668212a4"};
+var fdb=null,fauth=null,fuser=null;
+try{if(window.firebase){firebase.initializeApp(FB_CFG);fdb=firebase.database();fauth=firebase.auth()}}catch(e){fdb=null;fauth=null}
+function avaHtml(url,name){if(url){return '<img class="cava" src="'+esc(url)+'" alt=""/>'}return '<span class="cava cava-t">'+esc((name||'?').charAt(0).toUpperCase())+'</span>'}
+function renderAuthG(){document.querySelectorAll('.cauth').forEach(function(a){if(!fauth){a.innerHTML='';return}if(fuser){a.innerHTML='<span class="cwho">'+avaHtml(fuser.photoURL,fuser.displayName||fuser.email)+'<b>'+esc(fuser.displayName||fuser.email)+'</b></span><button class="clink" onclick="signOutG()">'+esc(a.dataset.logout)+'</button>'}else{a.innerHTML='<button class="btn cgoogle" onclick="signInG()">'+esc(a.dataset.login)+'</button><div class="cguest">'+esc(a.dataset.guest)+'</div>'}})}
+function signInG(){if(!fauth)return;var p=new firebase.auth.GoogleAuthProvider();fauth.signInWithPopup(p).catch(function(e){if(e&&(e.code==='auth/popup-blocked'||e.code==='auth/popup-closed-by-user')){fauth.signInWithRedirect(p)}else if(e){alert(e.message)}})}
+function signOutG(){if(fauth)fauth.signOut()}
+if(fauth){fauth.getRedirectResult().catch(function(){});fauth.onAuthStateChanged(function(u){fuser=u;renderAuthG()})}
+function renderC(){if(!fdb){document.querySelectorAll('.clist').forEach(function(el){el.innerHTML='<div class="cempty">'+el.dataset.empty+'</div>'});return}
+fdb.ref('hospital-comments').limitToLast(100).on('value',function(s){var v=s.val()||{};var keys=Object.keys(v);
+document.querySelectorAll('.clist').forEach(function(el){var loc=el.dataset.loc||'ru-RU';
+if(!keys.length){el.innerHTML='<div class="cempty">'+el.dataset.empty+'</div>';return}
+el.innerHTML=keys.map(function(k){var c=v[k];var d='';try{d=new Date(c.ts).toLocaleDateString(loc,{day:'numeric',month:'long',year:'numeric'})}catch(e){}
+var can=fuser&&fuser.uid===c.uid;
+return '<div class="cmt">'+(can?'<button class="cdel" title="'+el.dataset.del+'" onclick="delC(\''+k+'\')">✕</button>':'')+'<div class="chead">'+avaHtml(c.av,c.n)+'<b>'+esc(c.n||'—')+'</b><span>'+esc(d)+'</span></div>'+(c.t?'<div class="ctext">'+esc(c.t)+'</div>':'')+'</div>'}).reverse().join('')})})}
+function addC(btn){var box=btn.closest('.cbox');var list=box.querySelector('.clist');var t=box.querySelector('.ctext-in').value.trim();
+if(!fauth){return}
+if(!fuser){signInG();return}
+if(!t){alert(list.dataset.need);return}
+var old=btn.textContent;btn.disabled=true;btn.textContent=list.dataset.busy||'…';
+fdb.ref('hospital-comments').push({n:fuser.displayName||fuser.email||'—',uid:fuser.uid,av:fuser.photoURL||'',t:t.slice(0,600),ts:firebase.database.ServerValue.TIMESTAMP}).then(function(){box.querySelector('.ctext-in').value='';btn.disabled=false;btn.textContent=old}).catch(function(e){btn.disabled=false;btn.textContent=old;alert(e.message)})}
+function delC(k){if(!fdb||!fuser)return;fdb.ref('hospital-comments/'+k).once('value').then(function(s){var c=s.val();if(c&&c.uid===fuser.uid){return fdb.ref('hospital-comments/'+k).remove()}}).catch(function(){})}
+renderC();renderAuthG();showQuote();
 function shareP(){const d={title:'Благодарственное письмо · מכתב תודה',text:'Благодарность врачам Медицинского центра «Цафон»:',url:location.href};if(navigator.share){navigator.share(d).catch(()=>{})}else{try{navigator.clipboard.writeText(location.href);alert('הקישור הועתק · Ссылка скопирована')}catch(e){prompt('Скопируй ссылку:',location.href)}}}
 (function(){var els=document.querySelectorAll('.sec');if(!('IntersectionObserver' in window)){return}els.forEach(function(e){e.classList.add('rv')});var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.08});els.forEach(function(e){io.observe(e)});setTimeout(function(){var cur=document.querySelector('.lang.cur');if(cur){cur.querySelectorAll('.sec.rv').forEach(function(e){e.classList.add('on')})}},1100)})();
 </script>
