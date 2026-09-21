@@ -31,7 +31,7 @@ h1{font-size:30px;font-weight:700;letter-spacing:.5px;margin-bottom:10px}
 .div{display:flex;align-items:center;gap:14px;margin:26px 6px;color:#c89a2e;font-size:18px}
 .div::before,.div::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,#a87f24,transparent)}
 .heb{direction:rtl;text-align:right}
-.sig{font-family:'Segoe Script','Apple Chancery','Brush Script MT',cursive;font-size:42px;margin-top:26px}
+.signoff{font-style:italic;color:var(--cap,#b98f2f);margin-top:28px;font-size:17px;letter-spacing:.3px}
 .btn{display:inline-block;margin-top:26px;font-family:inherit;font-size:17px;font-weight:700;cursor:pointer;color:#3a2a05;text-decoration:none;background:linear-gradient(180deg,#ffe9a8 0%,#e8bd4e 45%,#b8860b 100%);border:1.5px solid #8a6a1e;border-radius:14px;padding:13px 30px;box-shadow:0 4px 10px var(--shadow,rgba(0,0,0,.45)),inset 0 1px 0 rgba(255,255,240,.6);text-shadow:0 1px 0 rgba(255,250,220,.5)}
 .btn:active{transform:translateY(1px)}
 .panel{margin-top:8px;text-align:center;background:var(--panel,linear-gradient(180deg,rgba(255,244,214,.06),rgba(255,244,214,.02)));border:1.5px solid #8a6a1e;border-radius:18px;padding:20px 16px 18px;box-shadow:0 6px 20px var(--shadow,rgba(0,0,0,.4)),inset 0 1px 0 rgba(255,240,190,.08)}
@@ -158,9 +158,8 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 </ul>
 <p>בעבר עבדתי ככבאי וכמפקד משמרת. אני יודע מה זה להציל חיי אדם וללכת אל תוך האש. אני מכיר היטב את מחיר העבודה הקשה הזו. אתם — מצילים אמיתיים.</p>
 <p>תודה להנהלת בית החולים על המנגנון המדהים והמתואם הזה. בריאות לכם, שגשוג וכוחות במלאכה הנאצלת שלכם!</p>
-<p style="margin-bottom:0">בכבוד רב ובתודה עמוקה,</p>
+<p class="signoff">בכבוד רב ובתודה עמוקה,<br/>המטופל אלכסנדר</p>
 </div>
-<div class="sig ge">אלכסנדר</div>
 <div class="sec"><button class="btn" onclick="shareP()">📤 לשתף את המכתב</button>
 <a class="btn" href="full-letter.html?l=he" style="margin-top:12px">📜 לקרוא את המכתב המלא</a>
 <a class="btn" href="checklist.html?l=he" style="margin-top:12px">🎒 מה לקחת לבית החולים</a></div>
@@ -214,9 +213,8 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 </ul>
 <p>في الماضي عملتُ رجل إطفاء وقائد وردية. أعرف معنى إنقاذ أرواح الناس والدخول إلى النار. أعرف جيداً ثمن هذا العمل الشاق. أنتم — منقذون حقيقيون.</p>
 <p>شكراً لإدارة المستشفى على هذا الجهاز المذهل المتناسق. صحّتكم وازدهاراً وقوة في عملكم النبيل!</p>
-<p style="margin-bottom:0">مع خالص الاحترام والشكر،</p>
+<p class="signoff">مع خالص الاحترام والشكر،<br/>المريض ألكسندر</p>
 </div>
-<div class="sig ge">ألكسندر</div>
 <div class="sec"><button class="btn" onclick="shareP()">📤 مشاركة الرسالة</button>
 <a class="btn" href="full-letter.html?l=ar" style="margin-top:12px">📜 قراءة الرسالة كاملة</a>
 <a class="btn" href="checklist.html?l=ar" style="margin-top:12px">🎒 ماذا تأخذ إلى المستشفى</a></div>
@@ -270,9 +268,8 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 </ul>
 <p>In the past I worked as a firefighter and shift commander. I know what it means to save people’s lives and to walk into fire. I know well the price of this hard work. You are true rescuers.</p>
 <p>Thank you to the hospital management for this amazing, well-coordinated mechanism. Health, prosperity and strength to you in your noble work!</p>
-<p style="margin-bottom:0">With deep respect and gratitude,</p>
+<p class="signoff">With deep respect and gratitude,<br/>patient Alexander</p>
 </div>
-<div class="sig ge">Alexander</div>
 <div class="sec"><button class="btn" onclick="shareP()">📤 Share this letter</button>
 <a class="btn" href="full-letter.html?l=en" style="margin-top:12px">📜 Read the full letter</a>
 <a class="btn" href="checklist.html?l=en" style="margin-top:12px">🎒 What to pack for hospital</a></div>
@@ -326,9 +323,8 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 </ul>
 <p>В прошлом я работал пожарным и начальником караула. Я знаю, что значит спасать чужие жизни и идти в огонь. Я хорошо знаю цену этому тяжелому труду. Вы — настоящие спасатели.</p>
 <p>Спасибо руководству больницы за этот потрясающий, слаженный механизм. Здоровья вам, процветания и сил в вашем благородном деле!</p>
-<p style="margin-bottom:0">С глубоким уважением и благодарностью,</p>
+<p class="signoff">С глубоким уважением и благодарностью,<br/>пациент Александр</p>
 </div>
-<div class="sig ge">Александр</div>
 <div class="sec"><button class="btn" onclick="shareP()">📤 Поделиться письмом</button>
 <a class="btn" href="full-letter.html?l=ru" style="margin-top:12px">📜 Читать полное письмо</a>
 <a class="btn" href="checklist.html?l=ru" style="margin-top:12px">🎒 Сборы в больницу</a></div>
