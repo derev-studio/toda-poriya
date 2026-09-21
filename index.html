@@ -42,7 +42,7 @@ h1{font-size:30px;font-weight:700;letter-spacing:.5px;margin-bottom:10px}
 .note{font-size:12.5px;color:var(--muted,#9a8c6d);margin-top:6px}
 .lnk{display:inline-block;text-decoration:none;margin-top:12px;font-size:15px;font-weight:700;color:#3a2a05;background:linear-gradient(180deg,#ffe9a8 0%,#e8bd4e 45%,#b8860b 100%);border:1.5px solid #8a6a1e;border-radius:12px;padding:10px 18px;box-shadow:0 3px 8px var(--shadow,rgba(0,0,0,.4)),inset 0 1px 0 rgba(255,255,240,.6)}
 .foot{margin-top:26px;font-size:11.5px;color:var(--foot,#c88c1c);font-weight:600;opacity:.9}
-.langbar{position:sticky;top:10px;z-index:50;display:flex;gap:8px;justify-content:center;margin:16px auto 8px}
+.langbar{position:sticky;top:8px;z-index:50;display:flex;gap:6px;justify-content:center;margin:14px auto 10px;padding:6px;max-width:580px;background:var(--bg2,#241c11);border:1.5px solid rgba(200,160,70,.45);border-radius:16px;box-shadow:0 4px 16px var(--shadow,rgba(0,0,0,.4))}
 .lbtn{flex:1;max-width:130px;padding:12px 4px;border-radius:14px;border:1.5px solid #b08d3e;background:rgba(255,252,245,.94);color:#6b5320;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;-webkit-tap-highlight-color:transparent}
 .lbtn.on{background:linear-gradient(135deg,#caa14f,#a8823a);color:#fff;box-shadow:0 4px 14px rgba(160,120,40,.35);border-color:#a8823a}
 .lang{display:none}
@@ -119,11 +119,12 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 .pbar{height:10px;border-radius:6px;background:var(--card);overflow:hidden;margin:14px 0 6px}
 .pfill{height:100%;width:0%;background:linear-gradient(90deg,#8a6516,#f3cd66);transition:width .45s ease}
 .ptext{font-size:13px;color:var(--cap,#cbb57e);text-align:center;margin-bottom:4px}
-.crpl{background:none;border:none;color:var(--cap,#b98f2f);cursor:pointer;font-size:13px;padding:2px 0;margin-top:4px;text-decoration:underline;font-family:inherit}.rbox{display:none;gap:8px;margin-top:8px;align-items:center}.rbox.open{display:flex}.rbox .rin{flex:1;min-width:0;background:rgba(0,0,0,.25);border:1px solid rgba(190,150,60,.4);border-radius:10px;padding:8px 10px;color:inherit;font-size:14px;font-family:inherit}.rsend{padding:8px 14px;font-size:13px;flex-shrink:0}.replies{margin-top:10px;border-inline-start:2px solid rgba(190,150,60,.4);padding-inline-start:12px}.rpl-item{position:relative;margin-bottom:8px}.cacts{display:flex;gap:18px;margin-top:10px}.cdel-t{color:#c96f5a !important}.pano-sec{margin:14px 0 64px}.pano-stage{position:relative;border-radius:18px;overflow:hidden;border:2px solid rgba(200,160,70,.55);box-shadow:0 10px 30px rgba(0,0,0,.45)}#pnl{width:100%;height:430px;background:#0d0a05}#pnl .pnl-zoom{background:#f6ecce;border:1px solid rgba(180,140,60,.85);border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.5);overflow:hidden}#pnl .pnl-fullscreen{background:#f6ecce;border:1px solid rgba(180,140,60,.85);border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.5)}.pano-scenes{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:10px;background:rgba(20,15,5,.85)}.pano-sc{border:1px solid rgba(200,160,70,.5);border-radius:999px;padding:7px 15px;background:transparent;color:#e8d9ae;cursor:pointer;font-family:inherit;font-size:14px;transition:background .2s}.pano-sc.on{background:rgba(200,160,70,.35);color:#fff}@media(max-width:640px){#pnl{height:320px}.pano-sc{padding:6px 12px;font-size:13px}}</style>
+.crpl{background:none;border:none;color:var(--cap,#b98f2f);cursor:pointer;font-size:13px;padding:2px 0;margin-top:4px;text-decoration:underline;font-family:inherit}.rbox{display:none;gap:8px;margin-top:8px;align-items:center}.rbox.open{display:flex}.rbox .rin{flex:1;min-width:0;background:rgba(0,0,0,.25);border:1px solid rgba(190,150,60,.4);border-radius:10px;padding:8px 10px;color:inherit;font-size:14px;font-family:inherit}.rsend{padding:8px 14px;font-size:13px;flex-shrink:0}.replies{margin-top:10px;border-inline-start:2px solid rgba(190,150,60,.4);padding-inline-start:12px}.rpl-item{position:relative;margin-bottom:8px}.cacts{display:flex;gap:18px;margin-top:10px}.cdel-t{color:#c96f5a !important}.pano-sec{margin:14px 0 64px}.pano-stage{position:relative;border-radius:18px;overflow:hidden;border:2px solid rgba(200,160,70,.55);box-shadow:0 10px 30px rgba(0,0,0,.45)}#pnl{width:100%;height:430px;background:#0d0a05}#pnl .pnl-zoom{background:#f6ecce;border:1px solid rgba(180,140,60,.85);border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.5);overflow:hidden}#pnl .pnl-fullscreen{background:#f6ecce;border:1px solid rgba(180,140,60,.85);border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.5)}.pano-scenes{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:10px;background:rgba(20,15,5,.85)}.pano-sc{border:1px solid rgba(200,160,70,.5);border-radius:999px;padding:7px 15px;background:transparent;color:#e8d9ae;cursor:pointer;font-family:inherit;font-size:14px;transition:background .2s}.pano-sc.on{background:rgba(200,160,70,.35);color:#fff}@media(max-width:640px){#pnl{height:320px}.pano-sc{padding:6px 12px;font-size:13px}}.strip{display:flex;align-items:center;gap:12px;margin:20px 8px;color:rgba(200,160,70,.85);font-size:13px}.strip:before,.strip:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,160,70,.75),transparent)}.acts{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:620px;margin:0 auto}.acts .btn{width:100%;margin:0 !important;text-align:center;box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px}@media(max-width:640px){.acts{grid-template-columns:1fr;max-width:420px}}#gauth{position:fixed;top:10px;right:12px;z-index:70}.gin{display:flex;align-items:center;gap:7px;background:linear-gradient(180deg,#ffe9a8 0%,#e8bd4e 45%,#c99417 100%);border:1.5px solid #8a6a1e;color:#3a2a05;font-weight:700;font-size:13px;border-radius:999px;padding:7px 14px;cursor:pointer;font-family:inherit;box-shadow:0 3px 10px rgba(0,0,0,.35)}.gin b{font-size:14px}.gav{width:38px;height:38px;border-radius:50%;border:2px solid #caa14f;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#caa14f,#8a6a1e);color:#fff;font-weight:700;font-size:16px;overflow:hidden;padding:0}.gav img{width:100%;height:100%;object-fit:cover;display:block}.about{margin:14px 0 26px;text-align:center;font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;color:var(--foot,#c88c1c)}@media(max-width:640px){.langbar{display:grid;grid-template-columns:1fr 1fr;max-width:340px}.lbtn{max-width:none !important;font-size:14px;padding:9px 2px}.gin{font-size:12px;padding:6px 11px}}</style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
 <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 </head>
 <body>
+<div id="gauth"></div>
 <div class="wrap">
 <div class="sec">
 <div class="pano-sec">
@@ -170,10 +171,9 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 <p>תודה להנהלת בית החולים על המנגנון המדהים והמתואם הזה. בריאות לכם, שגשוג וכוחות במלאכה הנאצלת שלכם!</p>
 <p class="signoff">בכבוד רב ובתודה עמוקה,<br/>המטופל אלכסנדר</p>
 </div>
-<div class="sec"><button class="btn" onclick="shareP()">📤 לשתף את המכתב</button>
-<a class="btn" href="full-letter.html?l=he" style="margin-top:12px">📜 לקרוא את המכתב המלא</a>
-<a class="btn" href="checklist.html?l=he" style="margin-top:12px">🎒 מה לקחת לבית החולים</a></div>
-<div class="sec"><button class="btn" onclick="openM()">☎ יצירת קשר עם בית החולים</button></div>
+<div class="strip">✦</div>
+<div class="sec"><div class="acts"><button class="btn" onclick="shareP()">📤 לשתף את המכתב</button><a class="btn" href="full-letter.html?l=he">📜 לקרוא את המכתב המלא</a><a class="btn" href="checklist.html?l=he">🎒 מה לקחת לבית החולים</a><button class="btn" onclick="openM()">☎ יצירת קשר עם בית החולים</button></div></div>
+<div class="strip">✦</div>
 <div class="modal" onclick="if(event.target===this)closeM()">
 <div class="mbox">
 <button class="mclose" onclick="closeM()" title="סגירה" aria-label="סגירה">✕</button>
@@ -189,15 +189,14 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 </div>
 </div>
 
-<div class="cbox sec"><div class="cauth" data-login="התחברות עם Google" data-logout="התנתקות" data-guest="התחברו עם Google כדי לכתוב תגובה"></div>
-<textarea class="ctext-in" maxlength="600" placeholder="כתבו מילים טובות לרופאים…"></textarea>
+<div class="cbox sec"><textarea class="ctext-in" maxlength="600" placeholder="כתבו מילים טובות לרופאים…"></textarea>
 <label class="cfile-lbl">+ הוספת תמונה<input class="cfile" type="file" accept="image/\*"/></label>
 <button class="btn cadd" onclick="addC(this)">שליחה</button>
 <div class="clist" data-empty="עדיין אין תגובות — היו ראשונים!" data-need="נא לכתוב טקסט או להוסיף תמונה" data-big="התמונה גדולה מדי (עד 4 מ״ב)" data-del="מחיקה" data-loc="he-IL" data-busy="שולח…" data-rpl="השב" data-rph="כתוב תגובה…" data-rsend="שלח" data-cf="למחוק את התגובה?"></div>
-<div class="cnote">התגובות גלויות לכל הגולשים. כדי לכתוב — התחברו עם Google.</div>
+<div class="cnote">התגובות גלויות לכל הגולשים. כדי לכתוב — התחברות עם Google בכפתור למעלה, בפינה.</div>
 </div>
 
-<div class="foot"><span class="fdisc">אתר לא רשמי · פרויקט אישי ודף תודה מטעם מטופל</span><br/><br/>«צפון» · פוריה · ישראל · © Derev Studio 🌵</div>
+<div class="foot"><span class="fdisc">אתר לא רשמי · פרויקט אישי ודף תודה מטעם מטופל</span><br/><br/>פוריה · ישראל</div>
 </div>
 
 <div class="lang" id="lang-ar" dir="rtl" lang="ar">
@@ -221,10 +220,9 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 <p>شكراً لإدارة المستشفى على هذا الجهاز المذهل المتناسق. صحّتكم وازدهاراً وقوة في عملكم النبيل!</p>
 <p class="signoff">مع خالص الاحترام والشكر،<br/>المريض ألكسندر</p>
 </div>
-<div class="sec"><button class="btn" onclick="shareP()">📤 مشاركة الرسالة</button>
-<a class="btn" href="full-letter.html?l=ar" style="margin-top:12px">📜 قراءة الرسالة كاملة</a>
-<a class="btn" href="checklist.html?l=ar" style="margin-top:12px">🎒 ماذا تأخذ إلى المستشفى</a></div>
-<div class="sec"><button class="btn" onclick="openM()">☎ التواصل مع المستشفى</button></div>
+<div class="strip">✦</div>
+<div class="sec"><div class="acts"><button class="btn" onclick="shareP()">📤 مشاركة الرسالة</button><a class="btn" href="full-letter.html?l=ar">📜 قراءة الرسالة كاملة</a><a class="btn" href="checklist.html?l=ar">🎒 ماذا تأخذ إلى المستشفى</a><button class="btn" onclick="openM()">☎ التواصل مع المستشفى</button></div></div>
+<div class="strip">✦</div>
 <div class="modal" onclick="if(event.target===this)closeM()">
 <div class="mbox">
 <button class="mclose" onclick="closeM()" title="إغلاق" aria-label="إغلاق">✕</button>
@@ -240,15 +238,14 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 </div>
 </div>
 
-<div class="cbox sec"><div class="cauth" data-login="تسجيل الدخول عبر Google" data-logout="تسجيل الخروج" data-guest="سجّلوا الدخول عبر Google لكتابة تعليق"></div>
-<textarea class="ctext-in" maxlength="600" placeholder="اكتبوا كلمات طيبة للأطباء…"></textarea>
+<div class="cbox sec"><textarea class="ctext-in" maxlength="600" placeholder="اكتبوا كلمات طيبة للأطباء…"></textarea>
 <label class="cfile-lbl">+ إضافة صورة<input class="cfile" type="file" accept="image/\*"/></label>
 <button class="btn cadd" onclick="addC(this)">إرسال</button>
 <div class="clist" data-empty="لا توجد تعليقات بعد — كن الأول!" data-need="اكتب نصاً أو أضف صورة" data-big="الصورة كبيرة جداً (الحد الأقصى 4 ميغابايت)" data-del="حذف" data-loc="ar-IL" data-busy="جارٍ الإرسال…" data-rpl="رد" data-rph="اكتب رداً…" data-rsend="إرسال" data-cf="هل تريد حذف التعليق؟"></div>
-<div class="cnote">التعليقات ظاهرة للجميع. للكتابة — سجّلوا الدخول عبر Google.</div>
+<div class="cnote">التعليقات ظاهرة للجميع. للكتابة — زر الدخول عبر Google أعلى الصفحة.</div>
 </div>
 
-<div class="foot"><span class="fdisc">موقع غير رسمي · مشروع شخصي وصفحة شكر من مريض</span><br/><br/>«تسافون» · بوريا · إسرائيل · © Derev Studio 🌵</div>
+<div class="foot"><span class="fdisc">موقع غير رسمي · مشروع شخصي وصفحة شكر من مريض</span><br/><br/>بوريا · إسرائيل</div>
 </div>
 
 <div class="lang" id="lang-en">
@@ -272,10 +269,9 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 <p>Thank you to the hospital management for this amazing, well-coordinated mechanism. Health, prosperity and strength to you in your noble work!</p>
 <p class="signoff">With deep respect and gratitude,<br/>patient Alexander</p>
 </div>
-<div class="sec"><button class="btn" onclick="shareP()">📤 Share this letter</button>
-<a class="btn" href="full-letter.html?l=en" style="margin-top:12px">📜 Read the full letter</a>
-<a class="btn" href="checklist.html?l=en" style="margin-top:12px">🎒 What to pack for hospital</a></div>
-<div class="sec"><button class="btn" onclick="openM()">☎ Contact the hospital</button></div>
+<div class="strip">✦</div>
+<div class="sec"><div class="acts"><button class="btn" onclick="shareP()">📤 Share this letter</button><a class="btn" href="full-letter.html?l=en">📜 Read the full letter</a><a class="btn" href="checklist.html?l=en">🎒 What to pack for hospital</a><button class="btn" onclick="openM()">☎ Contact the hospital</button></div></div>
+<div class="strip">✦</div>
 <div class="modal" onclick="if(event.target===this)closeM()">
 <div class="mbox">
 <button class="mclose" onclick="closeM()" title="Close" aria-label="Close">✕</button>
@@ -291,15 +287,14 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 </div>
 </div>
 
-<div class="cbox sec"><div class="cauth" data-login="Sign in with Google" data-logout="Sign out" data-guest="Sign in with Google to write a comment"></div>
-<textarea class="ctext-in" maxlength="600" placeholder="Write kind words to the doctors…"></textarea>
+<div class="cbox sec"><textarea class="ctext-in" maxlength="600" placeholder="Write kind words to the doctors…"></textarea>
 <label class="cfile-lbl">+ Add a photo<input class="cfile" type="file" accept="image/\*"/></label>
 <button class="btn cadd" onclick="addC(this)">Send</button>
 <div class="clist" data-empty="No comments yet — be the first!" data-need="Please write some text or add a photo" data-big="Photo too large (max 4 MB)" data-del="Delete" data-loc="en-GB" data-busy="Sending…" data-rpl="Reply" data-rph="Write a reply…" data-rsend="Send" data-cf="Delete this comment?"></div>
-<div class="cnote">Comments are visible to everyone. Sign in with Google to write one.</div>
+<div class="cnote">Comments are visible to everyone. To write one — the Google sign-in button, top right corner.</div>
 </div>
 
-<div class="foot"><span class="fdisc">This is an unofficial site · A personal project and a thank-you page from a patient</span><br/><br/>“Tzafon” · Poriya · Israel · © Derev Studio 🌵</div>
+<div class="foot"><span class="fdisc">This is an unofficial site · A personal project and a thank-you page from a patient</span><br/><br/>Poriya · Israel</div>
 </div>
 
 <div class="lang" id="lang-ru">
@@ -323,10 +318,9 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 <p>Спасибо руководству больницы за этот потрясающий, слаженный механизм. Здоровья вам, процветания и сил в вашем благородном деле!</p>
 <p class="signoff">С глубоким уважением и благодарностью,<br/>пациент Александр</p>
 </div>
-<div class="sec"><button class="btn" onclick="shareP()">📤 Поделиться письмом</button>
-<a class="btn" href="full-letter.html?l=ru" style="margin-top:12px">📜 Читать полное письмо</a>
-<a class="btn" href="checklist.html?l=ru" style="margin-top:12px">🎒 Сборы в больницу</a></div>
-<div class="sec"><button class="btn" onclick="openM()">☎ Как связаться с больницей</button></div>
+<div class="strip">✦</div>
+<div class="sec"><div class="acts"><button class="btn" onclick="shareP()">📤 Поделиться письмом</button><a class="btn" href="full-letter.html?l=ru">📜 Читать полное письмо</a><a class="btn" href="checklist.html?l=ru">🎒 Сборы в больницу</a><button class="btn" onclick="openM()">☎ Как связаться с больницей</button></div></div>
+<div class="strip">✦</div>
 <div class="modal" onclick="if(event.target===this)closeM()">
 <div class="mbox">
 <button class="mclose" onclick="closeM()" title="Закрыть" aria-label="Закрыть">✕</button>
@@ -342,19 +336,19 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 </div>
 </div>
 
-<div class="cbox sec"><div class="cauth" data-login="Войти через Google" data-logout="Выйти" data-guest="Войдите через Google, чтобы написать комментарий"></div>
-<textarea class="ctext-in" maxlength="600" placeholder="Напишите добрые слова врачам…"></textarea>
+<div class="cbox sec"><textarea class="ctext-in" maxlength="600" placeholder="Напишите добрые слова врачам…"></textarea>
 <label class="cfile-lbl">+ Добавить фото<input class="cfile" type="file" accept="image/\*"/></label>
 <button class="btn cadd" onclick="addC(this)">Отправить</button>
 <div class="clist" data-empty="Пока нет комментариев — будьте первым!" data-need="Напишите текст или добавьте фото" data-big="Фото слишком большое (максимум 4 МБ)" data-del="Удалить" data-loc="ru-RU" data-busy="Отправка…" data-rpl="Ответить" data-rph="Напишите ответ…" data-rsend="Отправить" data-cf="Удалить этот комментарий?"></div>
-<div class="cnote">Комментарии видны всем посетителям. Чтобы написать — войдите через Google.</div>
+<div class="cnote">Комментарии видны всем посетителям. Чтобы написать — кнопка входа Google в правом верхнем углу ↑</div>
 </div>
 
-<div class="foot"><span class="fdisc">Это неофициальный сайт · Личный проект и страница благодарности от пациента</span><br/><br/>«Цафон» · Пория · Израиль · © Derev Studio 🌵</div>
+<div class="foot"><span class="fdisc">Это неофициальный сайт · Личный проект и страница благодарности от пациента</span><br/><br/>Пория · Израиль</div>
 </div>
 <div class="qwrap">
 <div class="div" style="margin:14px 6px 8px">✦</div>
 <div class="quote" id="gquote"></div>
+<div class="about" id="aboutSite"></div>
 </div>
 </div>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -367,8 +361,9 @@ he:["«הכרת תודה היא זיכרון הלב.»","«אין חוב קדו�
 ar:["«الشكر هو ذاكرة القلب.»","«لا واجب أقدس من الشكر.»","«من يشكر الناس يزيد قلوبهم دفئاً.»","«الشكر هدية النفوس النبيلة.»"],
 en:["“Gratitude is the memory of the heart.”","“There is no duty more sacred than gratitude.”","“Gratitude is the sign of noble souls.”","“A thankful heart is a happy heart.”"]};
 function curLang(){var c=document.querySelector('.lang.cur');return c?c.id.replace('lang-',''):'he'}
-function showQuote(){var l=curLang();var a=QUOTES[l]||QUOTES.he;var q=a[Math.floor(Math.random()*a.length)];var el=document.getElementById('gquote');if(el){el.textContent=q}}
-function setL(l){document.querySelectorAll('.lang').forEach(function(e){e.classList.toggle('cur',e.id==='lang-'+l);if(e.classList.contains('cur')){requestAnimationFrame(function(){e.querySelectorAll('.sec').forEach(function(x){x.classList.add('on')})})}});document.querySelectorAll('.lbtn').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});try{localStorage.setItem('ltr',l)}catch(e){}showQuote();try{updatePanoLbl()}catch(e){}}
+var ABOUT={he:'עבודת יד · טכנולוגיות חדשות · בתודה מכל הלב',ar:'عمل يدوي · تقنيات حديثة · بامتنان من كل القلب',en:'Handmade · New technologies · With gratitude from all the heart',ru:'Ручная работа · Новые технологии · С благодарностью от всего сердца'};
+function showQuote(){var l=curLang();var a=QUOTES[l]||QUOTES.he;var q=a[Math.floor(Math.random()*a.length)];var el=document.getElementById('gquote');if(el){el.textContent=q}var ab=document.getElementById('aboutSite');if(ab){ab.textContent=ABOUT[l]||ABOUT.he}}
+function setL(l){document.querySelectorAll('.lang').forEach(function(e){e.classList.toggle('cur',e.id==='lang-'+l);if(e.classList.contains('cur')){requestAnimationFrame(function(){e.querySelectorAll('.sec').forEach(function(x){x.classList.add('on')})})}});document.querySelectorAll('.lbtn').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});try{localStorage.setItem('ltr',l)}catch(e){}showQuote();try{updatePanoLbl();renderAuthG()}catch(e){}}
 (function(){var s=null;try{s=localStorage.getItem('ltr')}catch(e){}if(s&&document.getElementById('lang-'+s)){setL(s)}})();
 function setT(t){document.body.className='th-'+t;document.querySelectorAll('.dot').forEach(function(d){d.classList.toggle('on',d.dataset.t===t)});try{localStorage.setItem('ltheme',t)}catch(e){}}
 (function(){var t=null;try{t=localStorage.getItem('ltheme')}catch(e){}if(t&&t!=='gold'){setT(t)}})();
@@ -382,7 +377,11 @@ var FB_CFG={apiKey:"AIzaSyB2X3o7KwYFkMfsskKoWpQYBrws8L-Mn9w",authDomain:"photo-g
 var fdb=null,fauth=null,fuser=null;
 try{if(window.firebase){firebase.initializeApp(FB_CFG);fdb=firebase.database();fauth=firebase.auth()}}catch(e){fdb=null;fauth=null}
 function avaHtml(url,name){if(url){return '<img class="cava" src="'+esc(url)+'" alt=""/>'}return '<span class="cava cava-t">'+esc((name||'?').charAt(0).toUpperCase())+'</span>'}
-function renderAuthG(){document.querySelectorAll('.cauth').forEach(function(a){if(!fauth){a.innerHTML='';return}if(fuser){a.innerHTML='<span class="cwho">'+avaHtml(fuser.photoURL,fuser.displayName||fuser.email)+'<b>'+esc(fuser.displayName||fuser.email)+'</b></span><button class="clink" onclick="signOutG()">'+esc(a.dataset.logout)+'</button>'}else{a.innerHTML='<button class="btn cgoogle" onclick="signInG()">'+esc(a.dataset.login)+'</button><div class="cguest">'+esc(a.dataset.guest)+'</div>'}})}
+var GAUTH={he:['התחברות עם Google','להתנתק?'],ar:['تسجيل الدخول عبر Google','تسجيل الخروج؟'],en:['Sign in with Google','Sign out?'],ru:['Войти через Google','Выйти?']};
+function gout(){var t=GAUTH[curLang()]||GAUTH.he;if(confirm(t[1]))signOutG()}
+function renderAuthG(){var a=document.getElementById('gauth');if(!a)return;if(!fauth){a.innerHTML='';return}var t=GAUTH[curLang()]||GAUTH.he;
+if(fuser){var nm=fuser.displayName||fuser.email||'';if(fuser.photoURL){a.innerHTML='<button class="gav" onclick="gout()" title="'+esc(nm)+'"><img src="'+esc(fuser.photoURL)+'" alt=""/></button>'}else{a.innerHTML='<button class="gav" onclick="gout()" title="'+esc(nm)+'">'+esc(nm.charAt(0).toUpperCase())+'</button>'}}
+else{a.innerHTML='<button class="gin" onclick="signInG()"><b>G</b> '+esc(t[0])+'</button>'}}
 function signInG(){if(!fauth)return;var p=new firebase.auth.GoogleAuthProvider();fauth.signInWithPopup(p).catch(function(e){if(e&&(e.code==='auth/popup-blocked'||e.code==='auth/popup-closed-by-user')){fauth.signInWithRedirect(p)}else if(e){alert(e.message)}})}
 function signOutG(){if(fauth)fauth.signOut()}
 if(fauth){fauth.getRedirectResult().catch(function(){});fauth.onAuthStateChanged(function(u){fuser=u;renderAuthG();drawC()})}
