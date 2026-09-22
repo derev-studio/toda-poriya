@@ -464,14 +464,14 @@ function toggleWide(){PANO_WIDE=!PANO_WIDE;document.querySelector('.pano-sec').c
 function updatePanoLbl(){var wb=document.getElementById('panoWideBtn');if(wb){var W=WIDELBL[curLang()]||WIDELBL.he;wb.textContent=W[PANO_WIDE?1:0]}var T=panoT();var sc=document.getElementById('panoScenes');if(!sc)return;
 sc.innerHTML='';T.sc.forEach(function(name,idx){var btn=document.createElement('button');btn.type='button';btn.className='pano-sc'+(idx===PANO_CUR?' on':'');btn.textContent=name;btn.onclick=function(){panoGo(idx)};sc.appendChild(btn)})}
 var PANOHQ={wide:'pano-wide.jpg',kin:'pano-kin.jpg',road:'pano-road.jpg',sun:'pano-sun.jpg',sign:'pano-sign.jpg'};
-var PANO_HQ=false;var PANO_ZHQ=0;
+var PANO_HQ=false;var PANO_ZHQ=0;var PANO_NOHQ=0;
 var HQLBL={he:['✨ איכות גבוהה','⚡ איכות רגילה'],ar:['✨ جودة عالية','⚡ جودة عادية'],en:['✨ High quality','⚡ Normal quality'],ru:['✨ Чёткая версия','⚡ Обычная версия']};
 function hqLbl(){var b=document.getElementById('panoHQBtn');if(!b)return;var L=HQLBL[curLang()]||HQLBL.ru;b.textContent=L[PANO_HQ?1:0]}
-function toggleHQ(){PANO_HQ=!PANO_HQ;if(PN){try{PN.destroy()}catch(e){}PN=null}updatePanoLbl();initPano()}
-function autoHQ(){if(PANO_HQ)return;var c=null;try{c=navigator.connection||navigator.webkitConnection||navigator.mozConnection}catch(e){}if(c&&c.saveData)return;if(c&&(c.effectiveType==='2g'||c.effectiveType==='slow-2g'||(c.downlink&&c.downlink<1.5)))return;toggleHQ()}
+function toggleHQ(){if(PANO_NOHQ&&!PANO_HQ)return;PANO_HQ=!PANO_HQ;if(PN){try{PN.destroy()}catch(e){}PN=null}updatePanoLbl();initPano()}
+function autoHQ(){if(PANO_HQ||PANO_NOHQ)return;var c=null;try{c=navigator.connection||navigator.webkitConnection||navigator.mozConnection}catch(e){}if(c&&c.saveData)return;if(c&&(c.effectiveType==='2g'||c.effectiveType==='slow-2g'||(c.downlink&&c.downlink<1.5)))return;toggleHQ()}
 setTimeout(autoHQ,2500);
 updatePanoLbl=(function(f){return function(){f();hqLbl()}})(updatePanoLbl);
-initPano=(function(f){return function(){f();try{if(PN&&PN.on&&!PANO_ZHQ){PN.on('zoomchange',function(){if(PN&&PN.getHfov()<75&&!PANO_HQ){PANO_ZHQ=1;toggleHQ()}})}}catch(e){}}})(initPano);
+initPano=(function(f){return function(){f();try{if(PN&&PN.on){if(!PANO_ZHQ){PN.on('zoomchange',function(){if(PN&&PN.getHfov()<75&&!PANO_HQ&&!PANO_NOHQ){PANO_ZHQ=1;toggleHQ()}})}PN.on('error',function(){if(PANO_HQ){PANO_HQ=false;PANO_ZHQ=1;PANO_NOHQ=1;updatePanoLbl();initPano()}})}}catch(e){}}})(initPano);
 function initPano(){var pel=document.getElementById('pnl');if(!pel||!window.pannellum||PN)return;
 var asp=pel.clientWidth/Math.max(1,pel.clientHeight);
 var P=13;var scenes={};
