@@ -485,7 +485,7 @@ var yawLim=Math.max(0,Math.floor((s.haov-hMax)/2)-3);
 scenes[s.id]={type:'equirectangular',panorama:(PANO_HQ?PANOHQ[s.id]:PANODATA[s.id]),haov:s.haov,vaov:vaov,
 minPitch:-P,maxPitch:P,minYaw:-yawLim,maxYaw:yawLim,yaw:s.yaw,
 hfov:hDef,minHfov:24,maxHfov:hMax,
-autoRotate:-0.6,autoRotateInactivityDelay:3000};
+autoRotate:-1.2};
 s._vaov=vaov;s._hMax=hMax;s._hDef=hDef});
 PN=pannellum.viewer('pnl',{showZoomCtrl:true,showFullscreenCtrl:true,compass:false,mouseZoom:true,
 scenes:scenes,'default':{firstScene:PANOSC[PANO_CUR].id,sceneFadeDuration:900,autoLoad:true}})}
