@@ -103,6 +103,10 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 .thx li{position:relative;padding-inline-start:26px;margin-bottom:12px}
 .thx li::before{content:"\2726";position:absolute;inset-inline-start:0;top:3px;color:#c89a2e;font-size:13px}
 @media(max-width:640px){.langbar{display:grid;grid-template-columns:1fr 1fr;max-width:340px}.lbtn{max-width:none;font-size:14px;padding:9px 2px}}
+/* исправления: RTL для иврита/арабского + ширина на большом экране */
+.lang[dir="rtl"] .letter,.lang[dir="rtl"] .to,.lang[dir="rtl"] .signoff{text-align:right}
+.lang[dir="rtl"] .letter p.lead::first-letter{float:right;padding:4px 0 0 10px}
+@media(min-width:900px){.wrap{max-width:960px}}
 </style>
 </head>
 <body>
@@ -228,16 +232,5 @@ function setT(t){document.body.className='th-'+t;document.querySelectorAll('.dot
 (function(){var t=null;try{t=localStorage.getItem('ltheme')}catch(e){}if(t&&t!=='gold'){setT(t)}})();
 (function(){var q=null;try{q=new URLSearchParams(location.search).get('l')}catch(e){}var s=null;try{s=q||localStorage.getItem('ltr')}catch(e){}if(s&&document.getElementById('lang-'+s)){setL(s)}})();
 (function(){var els=document.querySelectorAll('.sec');if(!('IntersectionObserver' in window)){return}els.forEach(function(e){e.classList.add('rv')});var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.08});els.forEach(function(e){io.observe(e)});setTimeout(function(){var cur=document.querySelector('.lang.cur');if(cur){cur.querySelectorAll('.sec.rv').forEach(function(e){e.classList.add('on')})}},1100)})();
-</script><!-- автоправка: иврит и арабский справа налево -->
-<style>
-[dir="rtl"] p.lead::first-letter{float:right;padding:4px 0 0 10px}
-</style>
-<script>
-(function(){
-  var rtl=/[\u0590-\u05FF\u0600-\u06FF]/;
-  document.querySelectorAll('h2,.to,.letter,.signoff').forEach(function(el){
-    if(rtl.test(el.textContent||'')){el.setAttribute('dir','rtl');el.style.textAlign='right';}
-  });
-})();
 </script>
 </body></html>

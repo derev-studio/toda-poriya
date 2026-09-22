@@ -112,6 +112,10 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
 .pfill{height:100%;width:0%;background:linear-gradient(90deg,#8a6516,#f3cd66);transition:width .45s ease}
 .ptext{font-size:13px;color:var(--cap,#cbb57e);text-align:center;margin-bottom:4px}
 @media(max-width:640px){.langbar{display:grid;grid-template-columns:1fr 1fr;max-width:340px}.lbtn{max-width:none;font-size:14px;padding:9px 2px}}
+/* исправления: RTL для иврита/арабского + ширина на большом экране */
+.lang[dir="rtl"] .letter,.lang[dir="rtl"] .to,.lang[dir="rtl"] .signoff{text-align:right}
+.lang[dir="rtl"] .letter p.lead::first-letter{float:right;padding:4px 0 0 10px}
+@media(min-width:900px){.wrap{max-width:960px}}
 </style>
 </head>
 <body>
