@@ -137,6 +137,7 @@ body.th-blue{--mboxbg:#141f36}body.th-green{--mboxbg:#12261b}body.th-beige{--mbo
     <div class="pano-scenes" id="panoScenes"></div>
   </div>
   <div style="text-align:center"><button class="pano-wide-btn" id="panoWideBtn" type="button" onclick="toggleWide()"></button></div>
+  <div style="text-align:center;margin-top:6px"><button class="pano-wide-btn" id="panoHQBtn" type="button" onclick="toggleHQ()"></button></div>
 </div>
 
 </div>
@@ -462,6 +463,11 @@ var WIDELBL={he:['⇆ פנורמה רחבה','↩ גודל רגיל'],ar:['⇆ �
 function toggleWide(){PANO_WIDE=!PANO_WIDE;document.querySelector('.pano-sec').classList.toggle('wide',PANO_WIDE);document.getElementById('pnl').classList.toggle('wide',PANO_WIDE);updatePanoLbl();if(PN){try{PN.destroy()}catch(e){}PN=null}initPano()}
 function updatePanoLbl(){var wb=document.getElementById('panoWideBtn');if(wb){var W=WIDELBL[curLang()]||WIDELBL.he;wb.textContent=W[PANO_WIDE?1:0]}var T=panoT();var sc=document.getElementById('panoScenes');if(!sc)return;
 sc.innerHTML='';T.sc.forEach(function(name,idx){var btn=document.createElement('button');btn.type='button';btn.className='pano-sc'+(idx===PANO_CUR?' on':'');btn.textContent=name;btn.onclick=function(){panoGo(idx)};sc.appendChild(btn)})}
+var PANOHQ={"wide": "pano-wide.jpg", "kin": "pano-kin.jpg", "road": "pano-road.jpg", "sun": "pano-sun.jpg", "sign": "pano-sign.jpg"};var PANO_HQ=false;
+var HQLBL={he:['✨ איכות גבוהה','⚡ איכות רגילה'],ar:['✨ جودة عالية','⚡ جودة عادية'],en:['✨ High quality','⚡ Normal quality'],ru:['✨ Чёткая версия','⚡ Обычная версия']};
+function hqLbl(){var b=document.getElementById('panoHQBtn');if(!b)return;var L=HQLBL[curLang()]||HQLBL.ru;b.textContent=L[PANO_HQ?1:0]}
+function toggleHQ(){PANO_HQ=!PANO_HQ;if(PN){try{PN.destroy()}catch(e){}PN=null}updatePanoLbl();initPano()}
+updatePanoLbl=(function(f){return function(){f();hqLbl()}})(updatePanoLbl);
 function initPano(){var pel=document.getElementById('pnl');if(!pel||!window.pannellum||PN)return;
 var asp=pel.clientWidth/Math.max(1,pel.clientHeight);
 var P=13;var scenes={};
@@ -472,7 +478,7 @@ var hMax=Math.floor(Math.atan(asp*Math.tan(vfovMax*Math.PI/360))*360/Math.PI);
 hMax=Math.max(30,Math.min(125,Math.min(hMax,Math.round(s.haov*0.75))));
 var hDef=hMax;
 var yawLim=Math.max(0,Math.floor((s.haov-hMax)/2)-3);
-scenes[s.id]={type:'equirectangular',panorama:PANODATA[s.id],haov:s.haov,vaov:vaov,
+scenes[s.id]={type:'equirectangular',panorama:(PANO_HQ?PANOHQ[s.id]:PANODATA[s.id]),haov:s.haov,vaov:vaov,
 minPitch:-P,maxPitch:P,minYaw:-yawLim,maxYaw:yawLim,yaw:s.yaw,
 hfov:hDef,minHfov:24,maxHfov:hMax,
 autoRotate:-0.6,autoRotateInactivityDelay:3000};
